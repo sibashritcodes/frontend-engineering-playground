@@ -25,3 +25,17 @@ greeting.myCall(user1, "Berhampur", "Odisha");
 greeting.myCall(5, "Berhampur", "Odisha");
 greeting.myCall(null, "Berhampur", "Odisha");
 
+console.log("---------- APPLY POLLYFILL ----------");
+
+Function.prototype.myApply = function (context, args) {
+  const _context = context === null ? globalThis : Object(context);
+  const key = Symbol();
+  _context[key] = this;
+  const result = _context[key](...args);
+  delete _context[key];
+  return result;
+};
+
+greeting.myApply(user1, ["Berhampur", "Odisha"]);
+greeting.myApply(5, ["Berhampur", "Odisha"]);
+greeting.myApply(null, ["Berhampur", "Odisha"]);
