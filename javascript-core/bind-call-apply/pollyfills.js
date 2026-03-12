@@ -1,0 +1,27 @@
+const user1 = {
+  name: "John",
+};
+
+const user2 = {
+  name: "Jenny",
+};
+
+const greeting = function (city, country) {
+  console.log("Hello I am " + this.name + " from " + city + "," + country);
+};
+
+console.log("---------- CALL POLLYFILL ----------");
+
+Function.prototype.myCall = function (context, ...args) {
+  const _context = context ? Object(context) : globalThis;
+  const key = Symbol();
+  _context[key] = this;
+  const result = _context[key](...args);
+  delete _context[key];
+  return result;
+};
+
+greeting.myCall(user1, "Berhampur", "Odisha");
+greeting.myCall(5, "Berhampur", "Odisha");
+greeting.myCall(null, "Berhampur", "Odisha");
+
