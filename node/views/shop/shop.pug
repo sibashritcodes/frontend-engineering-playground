@@ -1,0 +1,28 @@
+extends ../layouts/main-layout.pug
+include ./add-to-cart.pug
+
+block styles
+  link(rel="stylesheet", href="/css/shop.css")
+
+block content
+  .title Products
+
+  if prods && prods.length > 0
+    .grid
+      each product in prods
+        .card
+          img.image(src=product.imageURL)
+          .content
+            .name= product.name
+            .price ₹#{product.price}
+            .description= product.description
+            .actions
+              a.btn-card(href=`/details/${product.id}`) Details
+              +addToCart(product)
+  else
+    .container
+      .empty-state
+        .icon 📦
+        h2 No Products Found
+        p Looks like your shop is empty. Start by adding a product.
+        a.btn(href="/admin/add-product") Add Your First Product

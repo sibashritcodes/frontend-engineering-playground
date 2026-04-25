@@ -2,26 +2,24 @@ function memoize(fn) {
   let cache = {};
   return function (...args) {
     const key = JSON.stringify(args);
-    if (cache[key]) {
-      console.log("Coming from cache");
+    console.log(key);
+    if (key in cache) {
+      console.log("From Cache");
       return cache[key];
     }
-    cache[key] = fn(...args);
-    return cache[key];
+    console.log("First time calculation happeing...");
+    const result = fn.apply(this, args);
+    cache[key] = result;
+    return result;
   };
 }
 
-const expensiveCalculation = memoize((n) => n * n);
+const wm = new WeakMap();
+wm.set(5, 5);
+console.log(wm);
 
-const expensiveCalculation2 = memoize((n) => ({
-  ...n,
-  a: 1,
-}));
+const expensiveCalculation = memoize((n) => n * n);
 
 console.log(expensiveCalculation(4));
 console.log(expensiveCalculation(6));
 console.log(expensiveCalculation(4));
-
-console.log(expensiveCalculation2({ b: 1 }));
-console.log(expensiveCalculation2({ c: 1 }));
-console.log(expensiveCalculation2({ b: 1 }));

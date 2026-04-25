@@ -1,0 +1,48 @@
+extends ../layouts/main-layout.pug
+block styles
+    link(rel="stylesheet", href="/css/add-product.css")
+    
+block content
+    .container
+      .card
+        h2 Add Product
+
+        form(action="/admin/product", method="POST")
+          .form-group
+            label(for="name") Product Name
+            input(
+              type="text",
+              id="name",
+              name="name",
+              placeholder="Enter product name",
+              required
+            )
+          .form-group
+            label(for="name") Image URL
+            input(
+              type="text",
+              id="imageURL",
+              name="imageURL",
+              placeholder="Enter image url",
+              required
+            )
+          .form-group
+            label(for="price") Product Price
+            input(
+              type="text",
+              id="price",
+              name="price",
+              placeholder="Enter product price",
+              required
+            )
+          .form-group
+            label(for="name") Product Description
+            textarea(
+              rows="10"
+              id="description",
+              name="description",
+              placeholder="Enter product description",
+              required
+            )
+
+          button(type="submit") Submit

@@ -1,9 +1,9 @@
-function Throttle(fn, delay) {
+function Throttle(func, waitTime) {
   let lastRan = 0;
   return function (...args) {
     const now = Date.now();
-    if (now - lastRan >= delay) {
-      fn.apply(this, args);
+    if (now - lastRan >= waitTime) {
+      func.apply(this, args);
       lastRan = now;
     }
   };

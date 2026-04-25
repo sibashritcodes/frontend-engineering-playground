@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sibashrit Pattnaik – Resume</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Calibri:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --navy: #1b3a5c;
+        --navy-dark: #243f60;
+        --teal: #0d7377;
+        --dark: #1f2937;
+        --mid-gray: #6b7280;
+        --light-blue: #a8cbe0;
+        --white: #ffffff;
+        --page-width: 210mm;
+        --margin: 10mm;
+        --font: "Calibri", "Segoe UI", sans-serif;
+      }
+
+      body {
+        font-family: var(--font);
+        color: var(--dark);
+        background: #e8e8e8;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .page {
+        width: var(--page-width);
+        background: white;
+        box-shadow: 0 4px 32px rgba(0, 0, 0, 0.18);
+      }
+
+      /* ── HEADER ── */
+      .header {
+        background: var(--navy);
+        padding: 14px 14px 8px;
+      }
+      .header h1 {
+        font-size: 28pt;
+        font-weight: 700;
+        color: white;
+        letter-spacing: 2.5px;
+        line-height: 1.1;
+      }
+      .header .subtitle {
+        font-size: 10pt;
+        color: var(--light-blue);
+        margin-top: 4px;
+        letter-spacing: 0.3px;
+      }
+
+      /* ── CONTACT BAR ── */
+      .contact-bar {
+        background: var(--navy-dark);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 5px 14px;
+      }
+      .contact-item {
+        font-size: 8.5pt;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .contact-item:nth-child(2) {
+        justify-content: center;
+      }
+      .contact-item:nth-child(3) {
+        justify-content: flex-end;
+      }
+      .contact-item a {
+        color: white;
+        text-decoration: none;
+      }
+      .contact-item .icon {
+        font-size: 10pt;
+      }
+
+      /* ── BODY ── */
+      .body {
+        padding: 0 var(--margin) var(--margin);
+      }
+
+      /* ── SECTION HEADER ── */
+      .section-header {
+        margin-top: 15px;
+        margin-bottom: 7px;
+        border-bottom: 2.5px solid var(--teal);
+        padding-bottom: 3px;
+      }
+      .section-header h2 {
+        font-size: 10pt;
+        font-weight: 700;
+        color: var(--navy);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      /* ── SUMMARY ── */
+      .summary p {
+        font-size: 10pt;
+        line-height: 1.3;
+        color: var(--dark);
+        margin-bottom: 4px;
+      }
+
+      /* ── SKILLS TABLE ── */
+      .skills-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .skills-table td {
+        font-size: 9pt;
+        padding: 2px 0;
+        vertical-align: top;
+        line-height: 1.4;
+      }
+      .skills-table .skill-label {
+        font-weight: 700;
+        color: var(--navy);
+        width: 130px;
+        padding-right: 10px;
+        white-space: nowrap;
+      }
+
+      /* ── JOB ENTRY ── */
+      .next-page {
+        padding-top: 20px;
+      }
+      .job {
+        margin-bottom: 2px;
+      }
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-top: 8px;
+        margin-bottom: 1px;
+      }
+      .job-title {
+        font-size: 10pt;
+        font-weight: 700;
+        color: var(--dark);
+      }
+      .job-dates {
+        font-size: 9pt;
+        font-weight: 700;
+        color: var(--dark);
+        font-style: italic;
+        white-space: nowrap;
+        margin-left: 8px;
+      }
+      .job-company {
+        font-size: 9pt;
+        font-weight: 700;
+        color: var(--teal);
+        margin-bottom: 5px;
+      }
+
+      /* ── BULLETS ── */
+      ul.bullets {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      ul.bullets li {
+        font-size: 9pt;
+        line-height: 1.3;
+        color: var(--dark);
+        padding: 2.5px 0 2.5px 14px;
+        position: relative;
+      }
+      ul.bullets li::before {
+        content: "•";
+        position: absolute;
+        left: 2px;
+        top: 2.5px;
+        color: var(--dark);
+        font-size: 9pt;
+      }
+      ul.bullets li strong {
+        font-weight: 700;
+      }
+
+      /* ── EDUCATION ── */
+      .edu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-top: 7px;
+        margin-bottom: 1px;
+      }
+      .edu-degree {
+        font-size: 10pt;
+        font-weight: 700;
+        color: var(--dark);
+      }
+      .edu-dates {
+        font-size: 9pt;
+        font-weight: 700;
+        font-style: italic;
+        color: var(--dark);
+        white-space: nowrap;
+        margin-left: 8px;
+      }
+      .edu-school {
+        font-size: 9pt;
+        font-weight: 700;
+        color: var(--teal);
+        margin-bottom: 4px;
+      }
+
+      /* ── INFOSYS SPACING ── */
+      .job-infosys {
+        margin-top: 14px;
+      }
+
+      @media print {
+        body {
+          background: white;
+          padding: 0;
+        }
+        .page {
+          box-shadow: none;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- HEADER -->
+      <div class="header">
+        <h1>SIBASHRIT PATTNAIK</h1>
+        <div class="subtitle">
+          Lead Frontend Engineer – Vice President &nbsp;|&nbsp; JPMorgan Chase
+          &amp; Co.
+        </div>
+      </div>
+
+      <!-- CONTACT BAR -->
+      <div class="contact-bar">
+        <div class="contact-item">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 640 640"
+            width="12"
+            height="12"
+            fill="white"
+          >
+            <path
+              d="M112 128C85.5 128 64 149.5 64 176C64 191.1 71.1 205.3 83.2 214.4L291.2 370.4C308.3 383.2 331.7 383.2 349 370.4L556.8 214.4C568.9 205.3 576 191.1 576 176C576 149.5 554.5 128 528 128L112 128zM64 260L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 260L377.6 409C343.5 434.4 296.5 434.4 262.4 409L64 260z"
+            />
+          </svg>
+          <span>sibashritpattnaik@gmail.com</span>
+        </div>
+        <div class="contact-item">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 640 640"
+            width="10"
+            height="10"
+            fill="white"
+          >
+            <path
+              d="M224.2 89C216.3 70.1 195.7 60.1 176.1 65.4L170.6 66.9C106 84.5 50.8 147.1 66.9 223.3C104 398.3 241.7 536 416.7 573.1C493 589.3 555.5 534 573.1 469.4L574.6 463.9C580 444.2 569.9 423.6 551.1 415.8L453.8 375.3C437.3 368.4 418.2 373.2 406.8 387.1L368.2 434.3C297.9 399.4 241.3 341 209 269.3L253 233.3C266.9 222 271.6 202.9 264.8 186.3L224.2 89z"
+            />
+          </svg>
+          <span>+91-9538003570</span>
+        </div>
+        <div class="contact-item">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 640 640"
+            width="10"
+            height="10"
+            fill="white"
+          >
+            <path
+              d="M451.5 160C434.9 160 419 164.5 404.7 172.7C388.9 156.7 370.5 143.3 350.2 133.2C378.4 109.2 414.3 96 451.5 96C537.9 96 608 166 608 252.5C608 294 591.5 333.8 562.2 363.1L491.1 434.2C461.8 463.5 422 480 380.5 480C294.1 480 224 410 224 323.5C224 322 224 320.5 224.1 319C224.6 301.3 239.3 287.4 257 287.9C274.7 288.4 288.6 303.1 288.1 320.8C288.1 321.7 288.1 322.6 288.1 323.4C288.1 374.5 329.5 415.9 380.6 415.9C405.1 415.9 428.6 406.2 446 389L517.1 317.7C534.4 300.4 544.2 276.8 544.2 252.3C544.2 201.2 502.8 159.8 451.7 159.8zM307.2 237.3C305.3 236.5 303.4 235.4 301.7 234.2C289.1 227.7 274.7 224 259.6 224C235.1 224 211.6 233.7 194.2 251.1L123.1 322.2C105.8 339.5 96 363.1 96 387.6C96 438.7 137.4 480.1 188.5 480.1C205 480.1 221.1 475.7 235.2 467.5C251 483.5 269.4 496.9 289.8 507C261.6 530.9 225.8 544.2 188.5 544.2C102.1 544.2 32 474.2 32 387.7C32 346.2 48.5 306.4 77.8 277.1L148.9 206C178.2 176.7 218 160.2 259.5 160.2C346.1 160.2 416 230.8 416 317.1C416 318.4 416 319.7 416 321C415.6 338.7 400.9 352.6 383.2 352.2C365.5 351.8 351.6 337.1 352 319.4C352 318.6 352 317.9 352 317.1C352 283.4 334 253.8 307.2 237.5z"
+            />
+          </svg>
+          <a
+            href="https://www.linkedin.com/in/sibashritpattnaik"
+            target="_blank"
+            >linkedin.com/in/sibashritpattnaik</a
+          >
+        </div>
+      </div>
+
+      <div class="body">
+        <!-- PROFESSIONAL SUMMARY -->
+        <div class="section-header"><h2>Professional Summary</h2></div>
+        <div class="summary">
+          <p>
+            Lead Frontend Engineer with 10+ years of experience designing and
+            delivering scalable web platforms across fintech, consulting, and
+            enterprise domains. Specialized in React, TypeScript, and
+            micro-frontend architecture with strong ownership of platform
+            design, performance optimization, and developer experience.
+          </p>
+          <p>
+            Experienced in leading cross-functional teams and delivering complex
+            products from concept to production. Passionate about building
+            maintainable systems that improve development velocity and user
+            experience at scale.
+          </p>
+        </div>
+
+        <!-- TECHNICAL SKILLS -->
+        <div class="section-header"><h2>Technical Skills</h2></div>
+        <table class="skills-table">
+          <tr>
+            <td class="skill-label">Core Frontend</td>
+            <td>
+              JavaScript (ES6+), TypeScript, React.js, Next.js, Vue.js, Angular
+            </td>
+          </tr>
+          <tr>
+            <td class="skill-label">Styling &amp; UI</td>
+            <td>
+              HTML5, CSS3, SCSS, SASS, LESS, Stylus, Material UI, Bootstrap
+            </td>
+          </tr>
+          <tr>
+            <td class="skill-label">State &amp; Data</td>
+            <td>Redux, Zustand, React Query, D3.js, ReactFlow</td>
+          </tr>
+          <tr>
+            <td class="skill-label">Tools &amp; Build</td>
+            <td>Webpack, Storybook, Nx, ESLint, Prettier, Lodash</td>
+          </tr>
+          <tr>
+            <td class="skill-label">Backend &amp; Server-Side</td>
+            <td>Node.js, Express.js, Handlebars, Pug, EJS</td>
+          </tr>
+          <tr>
+            <td class="skill-label">Testing &amp; Quality</td>
+            <td>Jest, React Testing Library, Cypress, MSW</td>
+          </tr>
+          <tr>
+            <td class="skill-label">APIs &amp; Real-time</td>
+            <td>REST APIs, GraphQL, Socket.io</td>
+          </tr>
+          <tr>
+            <td class="skill-label">DevOps &amp; Monitoring</td>
+            <td>
+              Jenkins, Docker, New Relic, Sentry, Lighthouse, Adobe Analytics
+            </td>
+          </tr>
+          <tr>
+            <td class="skill-label">AI Tooling</td>
+            <td>GitHub Copilot, Claude Code</td>
+          </tr>
+          <tr>
+            <td class="skill-label">Practices</td>
+            <td>
+              Micro-Frontend Architecture, Atomic Design, WCAG 2.1, Agile
+              Methodologies, Technical Hiring
+            </td>
+          </tr>
+        </table>
+
+        <!-- PROFESSIONAL EXPERIENCE -->
+        <div class="section-header"><h2>Professional Experience</h2></div>
+
+        <!-- JPMC -->
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title"
+              >Lead Frontend Engineer – Vice President</span
+            >
+            <span class="job-dates">Jun 2022 – Present</span>
+          </div>
+          <div class="job-company">
+            JPMorgan Chase &amp; Co. &nbsp;·&nbsp; Bengaluru, India
+          </div>
+          <ul class="bullets">
+            <li>
+              Led development of a <strong>Project Onboarding</strong> platform
+              that streamlined onboarding of applications, infrastructure, and
+              engineering tools across the engineering platform, driving
+              cross-team adoption and earning recognition from senior
+              leadership.
+            </li>
+            <li>
+              Architected a <strong>micro-frontend platform</strong> composed of
+              <strong>10 independently deployable modules</strong>, enabling
+              parallel team development through isolated versioning and
+              non-breaking releases at scale.
+            </li>
+            <li>
+              Led UI delivery for <strong>ATLAS 2.0</strong>, an internal
+              self-service cloud management platform, coordinating Beta and Gold
+              release cycles, owning end-to-end defect triage, and driving a
+              <strong>zero-regression</strong> GA rollout.
+            </li>
+            <li>
+              Improved page load performance from <strong>10s to 3s</strong> by
+              optimizing frontend asset delivery — eliminating duplicate
+              JavaScript bundles across micro-frontends, enabling Webpack
+              compression, and introducing <strong>React Query</strong>–based
+              API caching.
+            </li>
+            <li>
+              Designed a
+              <strong>dynamic JSON-driven UI framework</strong> enabling
+              pluggable and reusable features, significantly accelerating
+              feature development across multiple applications.
+            </li>
+            <li>
+              Built a <strong>visual infrastructure designer tool</strong> with
+              real-time two-way JSON–diagram synchronization, productionized as
+              a reusable independently deployable package for infrastructure
+              blueprinting workflows.
+            </li>
+            <li>
+              Standardized shared UI components (e.g.,
+              <strong>Loader, Snackbar, configurable data tables</strong>) using
+              <strong>Storybook</strong>, improving design consistency,
+              accessibility, and theming across applications.
+            </li>
+            <li>
+              Increased unit test coverage from
+              <strong>47% to 95%</strong> across team repositories using
+              <strong>Jest and React Testing Library</strong>, while owning
+              production deployments and <strong>P1 incident triage</strong> to
+              ensure release stability.
+            </li>
+            <li>
+              Integrated analytics instrumentation and
+              <strong>Lighthouse</strong> performance monitoring to identify
+              bottlenecks and drive targeted optimizations, improving Core Web
+              Vitals across applications.
+            </li>
+            <li>
+              Authored technical proposals,
+              <strong>RFCs, and proof-of-concepts</strong> in collaboration with
+              multiple platform teams, aligning architectural decisions and
+              reducing cross-team integration friction.
+            </li>
+            <li>
+              Mentored engineers through technical onboarding across shared
+              frontend platforms and codebases, conducting knowledge-sharing
+              sessions, code reviews, and architectural guidance to accelerate
+              team ramp-up.
+            </li>
+            <li>
+              Designed and delivered an
+              <strong>Automated Help Tour</strong> feature recognized as Most
+              Innovative Idea in the JPMorgan Innovation Sprint and ranked
+              <strong>6th out of 159 teams</strong> in the JPMorgan Global
+              Hackathon 2023.
+            </li>
+          </ul>
+        </div>
+
+        <!-- DELOITTE -->
+        <div class="job next-page">
+          <div class="job-header">
+            <span class="job-title">Senior Consultant</span>
+            <span class="job-dates">Sep 2018 – Jun 2022</span>
+          </div>
+          <div class="job-company">
+            Deloitte Consulting India Pvt. Limited &nbsp;·&nbsp; Hyderabad,
+            India
+          </div>
+          <ul class="bullets">
+            <li>
+              Led frontend delivery for a
+              <strong>US-based nutrition client</strong> across multiple scrum
+              teams — owning task reviews, estimations, PR reviews,
+              retrospectives, and stakeholder demos.
+            </li>
+            <li>
+              Built a construction client portal using
+              <strong>React.js and Atomic Design</strong> principles —
+              architecting reusable components with React Hooks, React Router,
+              API integration, and complex multi-step form interactions.
+            </li>
+            <li>
+              Developed a high-traffic
+              <strong>e-commerce platform using Vue.js</strong> with responsive
+              and accessible UI patterns — delivering scroll restoration, PDF
+              integration, and dropdown type-ahead search.
+            </li>
+            <li>
+              Created a supply chain planning application integrating
+              <strong>Google Maps</strong> for route visualization and
+              <strong>D3.js</strong> analytics dashboards using Angular 7,
+              Node.js, and Express.js.
+            </li>
+          </ul>
+        </div>
+
+        <!-- INFOSYS -->
+        <div class="job job-infosys">
+          <div class="job-header">
+            <span class="job-title">Senior Systems Engineer</span>
+            <span class="job-dates">May 2015 – Sep 2018</span>
+          </div>
+          <div class="job-company">
+            Infosys Limited &nbsp;·&nbsp; Hyderabad, India
+          </div>
+          <ul class="bullets">
+            <li>
+              Led a <strong>team of 5 engineers</strong> to redesign UI
+              experiences across <strong>14 enterprise applications</strong> —
+              proposing prototypes and iterating on solutions that resolved
+              critical UX and data management challenges.
+            </li>
+            <li>
+              Built <strong>6 internal web applications</strong> end-to-end as a
+              full-stack developer — including requirements gathering,
+              stakeholder communication, prototype design, and production
+              delivery.
+            </li>
+            <li>
+              Developed reusable component libraries using
+              <strong
+                >HTML5, SCSS, Bootstrap 4, Angular 5, and TypeScript</strong
+              >
+              — improving development efficiency and consistency across
+              projects.
+            </li>
+          </ul>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="section-header"><h2>Education</h2></div>
+        <div class="edu-header">
+          <span class="edu-degree"
+            >Bachelor of Technology – Electronics &amp; Communication
+            Engineering</span
+          >
+          <span class="edu-dates">Aug 2011 – May 2015</span>
+        </div>
+        <div class="edu-school">
+          National Institute of Science &amp; Technology, Odisha
+        </div>
+
+        <!-- AWARDS -->
+        <div class="section-header"><h2>Awards &amp; Recognition</h2></div>
+        <ul class="bullets">
+          <li>
+            Won <strong>Impact Award 2024</strong> at JPMorgan Chase &amp; Co.
+            for outstanding contribution to Innovation.
+          </li>
+          <li>
+            Ranked <strong>6th out of 159 teams</strong> across India in
+            JPMorgan Global Hackathon 2023.
+          </li>
+          <li>
+            Recognized for <strong>Most Innovative Idea</strong> in JPMorgan
+            Innovation Sprint (Automated Help Tour).
+          </li>
+          <li>
+            Received <strong>2 Applause Awards</strong> and
+            <strong>2 Spot Awards</strong> at Deloitte for outstanding project
+            contributions.
+          </li>
+          <li>
+            Won <strong>Most Valuable Player</strong> at Infosys for stellar
+            contribution to the Digital Experience Unit (2018).
+          </li>
+          <li>
+            Won <strong>2 Insta Awards</strong> for creatively designing digital
+            portals at Infosys.
+          </li>
+        </ul>
+      </div>
+      <!-- /body -->
+    </div>
+    <!-- /page -->
+  </body>
+</html>

@@ -1,0 +1,13 @@
+extends ../layouts/main-layout.pug
+block styles
+    link(rel="stylesheet", href="/css/404.css")
+
+block content
+    .container
+      .ghost 👻
+      .error-code 404
+      .message Oops! Page Not Found
+      .subtext
+        | The page you are looking for might have been removed or is temporarily unavailable.
+
+      a.home-btn(href="/") Go Back Home
