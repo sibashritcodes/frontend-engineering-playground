@@ -73,3 +73,15 @@ exports.addToCartProduct = (req, res, next) => {
   Cart.addProduct(id);
   res.redirect("/");
 };
+
+exports.editProduct = (req, res, next) => {
+  const { productId } = req.params;
+  Product.getProductFromId(Number(productId), (selectedProduct) =>
+    res.render("admin/add-product", {
+      docTitle: "Edit product",
+      path: `/admin/edit/${productId}`,
+      product: selectedProduct,
+      edit: true,
+    }),
+  );
+};

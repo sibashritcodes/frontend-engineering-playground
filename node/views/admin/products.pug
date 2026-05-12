@@ -17,7 +17,7 @@ block content
             .description= product.description
 
             .actions
-              button.btn-card.edit Edit Product
+              a.btn-card.edit(href=`/admin/edit/${product.id}`) Edit Product
               form(action="/admin/deleteProduct" method="POST")
                 input(type="hidden", name="name", value=product.name)
                 button.btn-card.delete Delete Product

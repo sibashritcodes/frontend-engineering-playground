@@ -15,8 +15,9 @@ block content
               id="name",
               name="name",
               placeholder="Enter product name",
-              required
-            )
+              required,
+              value=`${edit ? product.name : ''}`
+            )   
           .form-group
             label(for="name") Image URL
             input(
@@ -25,6 +26,7 @@ block content
               name="imageURL",
               placeholder="Enter image url",
               required
+              value=`${edit ? product.imageURL : ''}`
             )
           .form-group
             label(for="price") Product Price
@@ -34,6 +36,7 @@ block content
               name="price",
               placeholder="Enter product price",
               required
+              value=`${edit ? product.price : ''}`
             )
           .form-group
             label(for="name") Product Description
@@ -43,6 +46,6 @@ block content
               name="description",
               placeholder="Enter product description",
               required
-            )
+            )= edit ? product.description : ''
 
           button(type="submit") Submit
